@@ -2,11 +2,13 @@ package com.lambdaschool.getorders.services;
 
 import com.lambdaschool.getorders.models.Order;
 import com.lambdaschool.getorders.repositories.OrderRepository;
+import com.lambdaschool.getorders.views.AdvanceAmounts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Transactional
 @Service(value = "orderServices")
@@ -25,9 +27,13 @@ public class OrderServicesImpl implements OrderServices
 	@Override
 	public Order findOrderById(long ordnum)
 	{
-		Order retOrd =
-				ordrepos.findById(ordnum).orElseThrow(() -> new EntityNotFoundException("Order " + ordnum + " not found"));
 		
-		return retOrd;
+		return ordrepos.findById(ordnum).orElseThrow(() -> new EntityNotFoundException("Order " + ordnum + " not found"));
+	}
+	
+	@Override
+	public List<AdvanceAmounts> findOrdersByAdvanceAmt()
+	{
+		return ordrepos.findByAdvanceAmt();
 	}
 }
