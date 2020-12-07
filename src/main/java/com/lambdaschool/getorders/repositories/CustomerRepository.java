@@ -12,8 +12,19 @@ import java.util.List;
  */
 public interface CustomerRepository extends CrudRepository<Customer, Long>
 {
+	/**
+	 * Find by custname containing ignoring case list.
+	 *
+	 * @param subname the subname
+	 * @return the list
+	 */
 	List<Customer> findByCustnameContainingIgnoringCase(String subname);
 	
+	/**
+	 * Find order count list.
+	 *
+	 * @return the list
+	 */
 	@Query(value = "SELECT c.custname name, count(ordnum) orderscount " +
 			"FROM orders o LEFT JOIN customers c " +
 			"ON o.custcode = c.custcode " +

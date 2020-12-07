@@ -6,10 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * The type Payment services.
+ */
 @Transactional
 @Service(value = "paymentServices")
 public class PaymentServicesImpl implements PaymentServices
 {
+	/**
+	 * The Payrepos.
+	 */
 	@Autowired
 	PaymentRepository payrepos;
 	

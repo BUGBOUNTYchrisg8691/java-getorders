@@ -11,10 +11,16 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Customer services.
+ */
 @Transactional
 @Service(value = "customerServices")
 public class CustomerServicesImpl implements CustomerServices
 {
+	/**
+	 * The Custrepos.
+	 */
 	@Autowired
 	CustomerRepository custrepos;
 	

@@ -12,6 +12,11 @@ import java.util.List;
  */
 public interface OrderRepository extends CrudRepository<Order, Long>
 {
+	/**
+	 * Find by advance amt list.
+	 *
+	 * @return the list
+	 */
 	@Query(value = "SELECT o.ordnum orderid, o.advanceamount advamt, " +
 			"c.custname name " +
 			"FROM customers c " +

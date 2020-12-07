@@ -13,12 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * The type Order controller.
+ */
 @RestController
 @RequestMapping("/orders")
 public class OrderController
 {
 	@Autowired
 	private OrderServices orderServices;
+	
+	/**
+	 * Gets order by id.
+	 *
+	 * @param ordnum the ordnum
+	 * @return the order by id
+	 */
 	//	GET /orders/order/{id} - Returns the order and its customer with the given order number
 	@GetMapping(value = "/order/{ordnum}", produces = {"application/json"})
 	public ResponseEntity<?> getOrderById(@PathVariable long ordnum)
@@ -27,7 +37,12 @@ public class OrderController
 		return new ResponseEntity<>(retOrd, HttpStatus.OK);
 	}
 	
-	/*  Stretch
+	/**
+	 * Gets orders by advance amt.
+	 *
+	 * @return the orders by advance amt
+	 */
+/*  Stretch
 		GET /orders/advanceamount - returns all orders with their customers
 		that have an advanceamount greater than 0. */
 	@GetMapping(value = "/advanceamount", produces = {"application" +

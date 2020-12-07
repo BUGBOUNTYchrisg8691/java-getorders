@@ -10,10 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+/**
+ * The type Order services.
+ */
 @Transactional
 @Service(value = "orderServices")
 public class OrderServicesImpl implements OrderServices
 {
+	/**
+	 * The Ordrepos.
+	 */
 	@Autowired
 	OrderRepository ordrepos;
 	

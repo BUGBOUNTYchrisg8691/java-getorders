@@ -8,10 +8,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 
+/**
+ * The type Agent services.
+ */
 @Transactional
 @Service(value = "agentServices")
 public class AgentServicesImpl implements AgentServices
 {
+	/**
+	 * The Agentrepos.
+	 */
 	@Autowired
 	AgentRepository agentrepos;
 	
