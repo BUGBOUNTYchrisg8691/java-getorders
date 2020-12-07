@@ -19,6 +19,7 @@ public class CustomerController
 {
 	@Autowired
 	private CustomerServices customerServices;
+	
 	//	GET /customers/orders - Returns all customers with their orders
 	@GetMapping(value = "/orders", produces = {"application/json"})
 	public ResponseEntity<?> getAllCustomers()
@@ -35,7 +36,8 @@ public class CustomerController
 		return new ResponseEntity<>(retCust, HttpStatus.OK);
 	}
 	
-	//  GET /customers/namelike/{likename} - Returns all customers and their orders with a customer name containing the given substring
+	//  GET /customers/namelike/{likename} - Returns all customers and their orders with a customer name containing
+	//  the given substring
 	@GetMapping(value = "/namelike/{likename}", produces = {"application/json"})
 	public ResponseEntity<?> getCustomerByLikeName(@PathVariable String likename)
 	{
