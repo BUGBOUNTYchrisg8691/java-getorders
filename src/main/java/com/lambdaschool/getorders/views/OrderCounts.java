@@ -13,9 +13,9 @@ public interface OrderCounts
 	String getName();
 	
 	/**
-	 * Gets orderscount.
+	 * Gets ordercount.
 	 *
-	 * @return the orderscount
+	 * @return the ordercount
 	 */
 	int getOrdercount();
 }
