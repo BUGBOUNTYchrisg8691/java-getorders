@@ -17,5 +17,5 @@ public interface OrderCounts
 	 *
 	 * @return the orderscount
 	 */
-	int getOrderscount();
+	int getOrdercount();
 }

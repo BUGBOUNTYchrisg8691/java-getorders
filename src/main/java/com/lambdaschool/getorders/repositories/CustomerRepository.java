@@ -25,10 +25,10 @@ public interface CustomerRepository extends CrudRepository<Customer, Long>
 	 *
 	 * @return the list
 	 */
-	@Query(value = "SELECT c.custname name, count(ordnum) orderscount " +
-			"FROM orders o LEFT JOIN customers c " +
-			"ON o.custcode = c.custcode " +
-			"GROUP BY c.custname " +
-			"ORDER BY orderscount DESC", nativeQuery = true)
+	@Query(value = "SELECT c.custname name, count(ordnum) ordercount " +
+			"FROM orders o " +
+			"LEFT JOIN customers c on c.custcode = o.custcode " +
+			"GROUP BY name " +
+			"ORDER BY ordercount DESC", nativeQuery = true)
 	List<OrderCounts> findOrderCount();
 }
